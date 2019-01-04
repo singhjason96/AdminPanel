@@ -1,0 +1,58 @@
+<link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Rasa" rel="stylesheet">
+<div class="background">
+</div>
+<div class="card">
+<h1>Users#new</h1>
+<div class="userscontainer">
+<%= form_for @user, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+    <div class="role">
+    <%= f.label :role%><br>
+    <%= f.select(:role) do %>
+        <% [['Student', 'Student'], ['Teacher', 'Teacher']].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+      </div>
+      <div class="firstname">
+      <%= f.label :first_name%><br>
+    <%= f.text_field :first_name %>
+    </div>
+    <div class="lastname">
+    <%= f.label :last_name%><br>
+    <%= f.text_field :last_name %>
+    </div>
+    <div class="age">
+    <%= f.label :age%><br>
+    <%= f.number_field :age %>
+    </div>
+    <div class="salary">
+    <%= f.label :salary%><br>
+    <%= f.number_field :salary %>
+    </div>
+    <div class="education">
+    <%= f.label :level_of_education%><br>
+    <%= f.select(:level_of_education) do %>
+        <% [['High School ', 'High School'], ['College', 'College'], ['Masters', 'Masters'], ['PHD', 'PHD']].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+      </div>
+
+      <div class="cohortopt">
+    <%= f.label :cohort%><br>
+    <%= f.select(:cohort) do %>
+      <% @cohorts.each do |cohort| %>
+       
+      
+          <%= content_tag(:option, cohort.name, value: cohort.id) %>
+        <% end %>
+      <% end %>
+      </div>
+   
+
+<div class="button">
+    <%= f.submit "Create" %>
+    </div>
+  <% end %>
+  </div>
+  </div>

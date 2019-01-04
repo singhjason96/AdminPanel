@@ -1,0 +1,64 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+input[type='submit'] {
+    background-color: #999999;
+}
+
+#user_role {
+    height: 1.5em;
+    width: 20em;
+}
+
+#user_first_name {
+    height: 1.5em;
+    width: 20em;
+}
+
+#user_last_name {
+    height: 1.5em;
+    width: 20em;
+}
+
+#user_age {
+    height: 1.5em;
+    width: 20em;
+}
+
+#user_salary {
+    height: 1.5em;
+    width: 20em;
+}
+
+#user_level_of_education {
+    height: 1.5em;
+    width: 20em;
+}
+
+#user_cohort {
+    height: 1.5em;
+    width: 20em;
+}
+
+h2{
+    margin-left: 30%;
+    padding-top: 2%;
+    font-size: 3em;
+    color: white;
+}
+
+
+.userscontainer {
+    position: relative;
+    margin-left: 25%;
+    margin-top: -5%;
+    font-size: 1.1em;
+    font-family: 'Alegreya SC', serif;
+    color: white;
+    
+}
+
+.button {
+    margin-top: -12%;
+}
+
