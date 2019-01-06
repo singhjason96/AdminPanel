@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
+      session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
       p @user.errors.messages
@@ -31,7 +32,7 @@ end
 
 private
 def user_params
-  params.require(:user).permit(:role, :first_name, :last_name, :age, :salary, :level_of_education)
+  params.require(:user).permit(:role, :first_name, :last_name, :email, :password, :age, :salary, :level_of_education, :cohort_id)
 end
 
 

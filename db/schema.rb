@@ -16,27 +16,35 @@ ActiveRecord::Schema.define(version: 2018_12_23_165603) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
+    t.integer "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_cohorts_on_users_id"
   end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.time "start_time"
     t.time "end_time"
+    t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_courses_on_cohort_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "role"
     t.string "first_name"
     t.string "last_name"
+    t.string "email"
+    t.string "password"
     t.integer "age"
     t.integer "salary"
     t.string "level_of_education"
+    t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_users_on_cohort_id"
   end
 
 end
