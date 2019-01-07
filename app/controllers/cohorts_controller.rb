@@ -22,6 +22,7 @@ class CohortsController < ApplicationController
     end
   end
   def index
+    @cohorts = Cohort.all
   end
 
   private

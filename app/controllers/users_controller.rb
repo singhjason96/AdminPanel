@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def new
    @user = User.new
-   @cohorts = Cohort.all
+   
   end
 
   def create 
@@ -19,7 +19,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
-      p @user.errors.messages
+      @errors = @user.errors.full_messages
+     
       render 'new'
     end
   end
@@ -27,12 +28,15 @@ class UsersController < ApplicationController
   
 
   def index
+    @users = User.all
+
   end
-end
 
-private
-def user_params
-  params.require(:user).permit(:role, :first_name, :last_name, :email, :password, :age, :salary, :level_of_education, :cohort_id)
-end
 
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+end
 

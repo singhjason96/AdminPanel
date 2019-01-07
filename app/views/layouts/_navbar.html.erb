@@ -1,5 +1,8 @@
 <% if logged_in? %>
 <%= current_user.email %>
+<%= link_to "cohorts", cohorts_path %>
+<%= link_to "users", users_path %>
+<%= link_to  "students", students_path %>
 <%= link_to "log out", logout_path %>
 <% else %>
 <%= link_to "log in", new_session_path %>

@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_165603) do
+ActiveRecord::Schema.define(version: 2019_01_07_005131) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
     t.date "start_date"
     t.date "end_date"
-    t.integer "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_cohorts_on_users_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -32,19 +30,38 @@ ActiveRecord::Schema.define(version: 2018_12_23_165603) do
     t.index ["cohort_id"], name: "index_courses_on_cohort_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "role"
+  create_table "instructors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "password"
     t.integer "age"
     t.integer "salary"
     t.string "level_of_education"
     t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cohort_id"], name: "index_users_on_cohort_id"
+    t.index ["cohort_id"], name: "index_instructors_on_cohort_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.integer "age"
+    t.string "level_of_education"
+    t.integer "cohort_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_students_on_cohort_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

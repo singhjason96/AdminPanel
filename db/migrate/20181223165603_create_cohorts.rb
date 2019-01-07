@@ -4,7 +4,6 @@ class CreateCohorts < ActiveRecord::Migration[5.2]
       t.string :name
       t.date :start_date
       t.date :end_date
-      t.references :users, foreign_key: true
 
 
       t.timestamps
