@@ -1,7 +1,10 @@
 <h4>Students</h4>
 <%= link_to "New Student", new_student_path %>
 <% @students.each do |student| %>
-    <div>
+    <div class="delete-button">
     <%=link_to student.first_name + ' ' + student.last_name, student_path(student.id) %>
+    <%=link_to "Edit", edit_student_path(student) %>
+    <%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_student' %> 
+
     </div>
     <% end %>

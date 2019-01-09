@@ -1,3 +1,30 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    background-image: url('https://cdn.allwallpaper.in/wallpapers/2560x1600/4797/black-background-dark-minimalistic-music-red-2560x1600-wallpaper.jpg');
+    background-size: cover;  
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10%;    
+    
+}
+
+.login-form {
+    margin-left: 35%;
+    color: white;
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid #262626;
+    padding: 25px;
+}
+
+input#email {
+    margin-left: 20%;
+}
+
+input#password {
+    margin-left: 20%;
+}

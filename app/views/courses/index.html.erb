@@ -1,2 +1,9 @@
-<h1>Courses#index</h1>
+<%= link_to "New Course", new_cohort_course_path(@cohort.id) %> 
 
+
+<h1>Courses#index</h1>
+<% @courses.each do |course| %>
+ <%= link_to course.name, cohort_course_path(@cohort.id, course.id)  %>
+ 
+
+ <% end %>

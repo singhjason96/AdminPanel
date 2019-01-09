@@ -1,6 +1,11 @@
 <h1>Cohorts#index</h1>
+<%= link_to "New Cohort", new_cohort_path %>
+
 <% @cohorts.each do |cohort| %>
     <div> 
     <%= link_to cohort.name, cohort_path(cohort.id) %>
+    
     </div>
     <% end %>
+
+   

@@ -23,7 +23,10 @@ class CohortsController < ApplicationController
   end
   def index
     @cohorts = Cohort.all
+    # @cohort = Cohort.find(params[:cohort_id])
   end
+
+
 
   private
   def cohort_params
