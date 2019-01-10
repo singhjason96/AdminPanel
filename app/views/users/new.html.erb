@@ -3,7 +3,7 @@
 <div class="background">
 </div>
 <div class="card">
-<h1>Users#new</h1>
+<h1>New Admin</h1>
 <% if @errors %>
 <div class="errors">
 <% @errors.each do |error| %>
@@ -11,7 +11,7 @@
   <% end %>
   </div>
 <% end %>
-<div class="userscontainer">
+<div class="card-header">
 <%= form_for @user, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
     
       <div class="firstname">

@@ -1,9 +1,18 @@
-<%= link_to "New Course", new_cohort_course_path(@cohort.id) %> 
 
 
-<h1>Courses#index</h1>
-<% @courses.each do |course| %>
- <%= link_to course.name, cohort_course_path(@cohort.id, course.id)  %>
+<div class="card">
+<h1>Courses</h1>
+<% @cohort.courses.each do |course| %>
  
+  <h5 class="card-header"> <%= link_to course.name, cohort_course_path(@cohort.id, course.id)  %>
+  </h5>
+ 
+  </p>
+  
+ 
+  </div>
+</div>
 
- <% end %>
+<% end %>
+<p class="card-header"> <%= link_to "New Course", new_cohort_course_path(@cohort.id) %> 
+</div>

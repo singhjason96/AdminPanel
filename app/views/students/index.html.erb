@@ -1,8 +1,11 @@
-<h4>Students</h4>
+<h1>Students</h1>
 <%= link_to "New Student", new_student_path %>
+<div class="card">
 <% @students.each do |student| %>
     <div class="delete-button">
+    <h5 class="card-title">
     <%=link_to student.first_name + ' ' + student.last_name, student_path(student.id) %>
+    </h5>
     <%=link_to "Edit", edit_student_path(student) %>
     <%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_student' %> 
 

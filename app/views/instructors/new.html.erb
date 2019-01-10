@@ -1,47 +1,52 @@
-
+<h2>New Instructor</h2>
 <%= form_for @instructor, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
    
-      <div class="firstname">
+  <div class="card">
+  <div class="card-header">
+    New Instructor
+  </div>
+  <li class="list-group-item">
       <%= f.label :first_name%><br>
     <%= f.text_field :first_name %>
-    </div>
-    <div class="lastname">
+    </li>
+    <li class="list-group-item">
     <%= f.label :last_name%><br>
     <%= f.text_field :last_name %>
-    </div>
-    <div class="email">
+    </li>
+    <li class="list-group-item">
     <%=f.label :email%><br>
     <%= f.text_field :email %>
-    </div>
+    </li>
     
-    <div class="age">
+    <li class="list-group-item">
     <%= f.label :age%><br>
     <%= f.number_field :age %>
-    </div>
+    </li>
 
-    <div class="salary">
+    <li class="list-group-item">
     <%= f.label :salary%><br>
     <%= f.number_field :salary %>
-    </div>
+    </li>
     
     
-    <div class="education">
+    <li class="list-group-item">
     <%= f.label :level_of_education%><br>
     <%= f.select(:level_of_education) do %>
         <% [['High School ', 'High School'], ['College', 'College'], ['Masters', 'Masters'], ['PHD', 'PHD']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
-      </div>
+      </li>
 
-      <div class="cohortopt">
+      <li class="list-group-item">
     <%= f.label :cohort%><br>
     <%= f.select(:cohort_id) do %>
       <% @cohorts.each do |cohort| %>      
           <%= content_tag(:option, cohort.name, value: cohort.id) %>
         <% end %>
       <% end %>
-      </div>
+      </li>
+      </ul>
    
 
 <div class="button">

@@ -1,6 +1,9 @@
+<div class="card">
+<div class="card-header"><h1>
+Edit Student</h1>
+</div>
 <div class="userscontainer">
 <%= form_for @student, html: {class: "nifty_form"} do |f| %>
-   
     <div class="firstname">
       <%= f.label :first_name%><br>
     <%= f.text_field :first_name %>
@@ -39,8 +42,9 @@
    
 
 <div class="button">
-    <%= f.submit "Create" %>
+    <%= f.submit "Update" %>
     </div>
   <% end %>
   </div>
   </div>
+</div>

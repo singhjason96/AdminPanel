@@ -1,3 +1,31 @@
 // Place all the styles related to the cohorts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    background-image: url("https://hdwallsource.com/img/2015/3/abstract-wallpaper-47342-48869-hd-wallpapers.jpg");
+    
+}
+
+.card-header {
+    text-align: center;
+    color:black;
+    
+    
+}
+
+.card {
+    width: 500px;
+    background-color: #fcaa1d;
+    opacity: 0.8;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.card-title {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    color: white;
+}

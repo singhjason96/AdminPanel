@@ -1,8 +1,8 @@
-<h1>Users#index</h1>
+<h1>Admin List</h1>
 <%=link_to "New User", new_user_path %>
-<h4>Users</h4>
+
 <% @users.each do |user| %>
-    <div>
+    <div class="card-header">
     <%=link_to user.first_name + ' ' + user.last_name, user_path(user.id) %>
     </div>
     <% end %>

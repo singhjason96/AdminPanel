@@ -1,3 +1,17 @@
-<h1>Cohorts#show</h1>
-<%= link_to "courses",cohort_courses_path(@cohort.id) %>
-<h2><%= @cohort.name %></h2>
+<h1></h1>
+
+
+
+
+<div class="card">
+  <h1 class="card-header"><%= @cohort.name %></h1>
+  <div class="card-body">
+    <h2 class="card-title">Teacher: <%= @cohort.instructor.first_name%> <%= @cohort.instructor.last_name%></h2>
+    
+    <h5 class="card-title">Start Date: <%= @cohort.start_date %></h5>
+    
+    <h5 class="card-title">End Date: <%= @cohort.end_date %></h5>
+    <%= link_to "courses",cohort_courses_path(@cohort.id) %>
+
+  </div>
+</div>

@@ -1,10 +1,17 @@
-<h4>Instructors</h4>
+<h1>Instructors</h1>
+
 <%= link_to "New Instructor", new_instructor_path %>
+<div class="card">
 <% @instructors.each do |instructor| %>
     <div class="wrapper">
+    <h5 class="card-title">
     <%=link_to instructor.first_name + ' ' + instructor.last_name, instructor_path(instructor.id) %>
+    </h5>
+    
+   
     <%=link_to "Edit", edit_instructor_path(instructor) %>
     <%= link_to 'Delete', instructor, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_instructor' %> 
-
     </div>
+ 
     <% end %>
+ 

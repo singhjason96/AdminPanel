@@ -1,5 +1,7 @@
 class CohortsController < ApplicationController
   def edit
+    @cohort = Cohort.find(params[:id])
+    @cohorts = Cohort.all
   end
 
   def show
@@ -25,6 +27,24 @@ class CohortsController < ApplicationController
     @cohorts = Cohort.all
     # @cohort = Cohort.find(params[:cohort_id])
   end
+
+  def update 
+    @cohort = Cohort.find(params[:id])
+    if @cohort.update(cohort_params[:id])
+      redirect_to @cohort, notice: "Cohort Updated"
+    end
+  end
+
+  def destroy 
+    @cohort = Cohort.find(params[:id])
+    @cohort.destroy
+    respond_to do |format|
+      format.html { redirect_to cohorts_path }
+      format.json { head :no_content }
+      format.js { render :layout => false }
+    end
+  end
+    
 
 
 

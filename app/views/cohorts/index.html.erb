@@ -1,11 +1,19 @@
-<h1>Cohorts#index</h1>
-<%= link_to "New Cohort", new_cohort_path %>
 
+
+
+<div class="card">
 <% @cohorts.each do |cohort| %>
-    <div> 
+    <div class="wrapper"> 
+    <div class="card-header">
     <%= link_to cohort.name, cohort_path(cohort.id) %>
+    </div>
+    <div>
     
+   
+    <%= link_to 'Delete', cohort, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_cohort' %> 
+    </div>
+
     </div>
     <% end %>
-
+    </div>
    

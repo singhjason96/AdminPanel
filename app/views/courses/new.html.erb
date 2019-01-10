@@ -1,18 +1,32 @@
-<h1>Courses#new</h1>
-<h1>New Courses</h1>
+
+
 <div class="container">
-<%= form_for @course, url: {action: "new"}, html: {class: "nifty_form"} do |f| %>
-    <%= f.label :name%><br>
-    <%= f.text_field :name %>
-    <%= f.label :start_time%><br>
-    <%= f.time_field :start_time %>
-    <%= f.label :end_time%><br>
-    <%= f.time_field :end_time %>
+<%= form_for @course, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+   
+
+    <div class="card">
+    <div class="card-header"><h1>Add Courses</h1>
+    </div>
+    <div class="card-body">
+      <h6 class="card-title"><%= f.label :name%></h6>
+      <h6 class="card-title"><%= f.text_field :name %></h6>
+      <h6 class="card-title"><%= f.label :start_time%></h6>
+      <h6 class="card-title"><%= f.time_field :start_time %></h6>
+      <h6 class="card-title"><%= f.label :end_time %></h6>
+      <h6 class="card-title"><%= f.time_field :end_time %><br></h6>
+
+
+    <div class="button">
+      <%= f.submit "Add" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+
+
+    
     
    
 
-<div class="submit">
-    <%= f.submit "Create" %>
-    </div>
-  <% end %>
-</div>

@@ -1,5 +1,8 @@
-<div class="card">
 
-<h2><%= @instructor.first_name + " " + @instructor.last_name %></h2>
-<h2><%= @instructor.cohort.name %></h2>
+
+<div class="inst">
+<div class="inst-title">Instructor</div>
+<div class="name">Name: <%= @instructor.first_name + " " + @instructor.last_name %></div>
+<div class="cohort">Cohort: <%= @instructor.cohort.name %></div>
+<div class="inst-email"><%= @instructor.email %></div>
 </div>
