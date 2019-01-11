@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'sentry raven'
+gem 'sentry-raven'
 
 group :development do
 	gem "sqlite3"
